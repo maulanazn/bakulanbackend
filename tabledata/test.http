@@ -1,0 +1,66 @@
+GET http://localhost:3000 HTTP/1.1
+
+##
+
+POST http://localhost:3000/register HTTP/1.0
+Content-Type: application/json
+
+{
+    "username": "maulanazn",
+    "full_name": "maulana zulkifli n",
+    "phone_number": 912832,
+    "roles": "BUYER",
+    "email": "maulanazn123@mail.com",
+    "password": "maulanazn123"
+}
+
+###
+POST http://localhost:3000/login HTTP/1.0
+Content-Type: application/json
+
+{
+    "username": "maulanazn",
+    "password": "m4ul4n4zn123"
+}
+
+###
+GET http://localhost:3000/user/maulanazn HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hdWxhbmF6biJ9.VjC__1v1e-iIbFQxCp9ftiIg-HeM1thawZQWSca2SP0
+
+###
+PUT http://localhost:3000/user/maulanazn HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hdWxhbmF6biJ9.VjC__1v1e-iIbFQxCp9ftiIg-HeM1thawZQWSca2SP0
+
+{
+    "full_name": "maulana zulkifli n",
+    "phone_number": 838737,
+    "password": "m4ul4n4zn123"
+}
+
+
+###
+POST http://localhost:3000/address/maulanazn HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hdWxhbmF6biJ9.VjC__1v1e-iIbFQxCp9ftiIg-HeM1thawZQWSca2SP0
+
+{
+    "street": "jalan bambu no 14",
+    "city": "Bima",
+    "postal_code": "ksjd922",
+    "province": "NTB",
+    "country": "Indonesia"
+}
+
+
+
+###
+GET http://localhost:3000/address/maulanazn HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hdWxhbmF6biJ9.VjC__1v1e-iIbFQxCp9ftiIg-HeM1thawZQWSca2SP0
+
+###
+GET http://localhost:3000/address/maulanazn/detail/14 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hdWxhbmF6biJ9.VjC__1v1e-iIbFQxCp9ftiIg-HeM1thawZQWSca2SP0

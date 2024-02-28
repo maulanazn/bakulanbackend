@@ -1,0 +1,27 @@
+@startuml WhiteSmoke
+
+entity Users {
+    id int <<PK>>
+    username string <<UNIQUE>>
+    --
+    full_name string
+    phone_number int
+    roles enum('seller', 'buyer')
+    email string <<UNIQUE>>
+    password string
+    created_at timestamp
+    updated_at timestamp
+}
+
+entity Address {
+    id int <<PK>>
+    user_id string <<FK>>
+    --
+    street string
+    city string
+    postal_code string
+    province string
+    country string
+}
+
+@enduml
